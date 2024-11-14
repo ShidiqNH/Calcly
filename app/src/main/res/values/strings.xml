@@ -48,6 +48,27 @@
         <item>Ounce</item>
     </string-array>
 
+    <string-array name="length_units_full">
+        <item>Kilometer</item>
+        <item>Meter</item>
+        <item>Centimeter</item>
+        <item>Milimeter</item>
+        <item>Mile</item>
+        <item>Yard</item>
+        <item>Foot</item>
+        <item>Inch</item>
+    </string-array>
+
+    <string-array name="time_units_full">
+        <item>Year</item>
+        <item>Week</item>
+        <item>Day</item>
+        <item>Hour</item>
+        <item>Minute</item>
+        <item>Second</item>
+        <item>Millisecond</item>
+    </string-array>
+
     <string-array name="temperature_units_abbr">
         <item>°C</item>
         <item>°F</item>
@@ -63,6 +84,28 @@
         <item>Mg</item>
         <item>lb</item>
         <item>oz</item>
+    </string-array>
+
+    <string-array name="length_units_abbr">
+        <item>Km</item>
+        <item>m</item>
+        <item>Cm</item>
+        <item>mm</item>
+        <item>mi</item>
+        <item>yd</item>
+        <item>ft</item>
+        <item>in</item>
+    </string-array>
+
+    <string-array name="time_units_abbr">
+        <item>y</item>
+        <item>wk</item>
+        <item>d</item>
+        <item>mm</item>
+        <item>h</item>
+        <item>min</item>
+        <item>s</item>
+        <item>ms</item>
     </string-array>
 
 
