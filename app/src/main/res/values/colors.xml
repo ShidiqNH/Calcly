@@ -8,6 +8,11 @@
     <color name="operation">#ff5c00</color>
     <color name="buttonBackground">#f5f6f8</color>
     <color name="iconColor">#999999</color>
+    <color name="bmi_underweight">#007ACC</color>
+    <color name="bmi_normal">#4CAF50</color>
+    <color name="bmi_overweight">#FF9800</color>
+    <color name="bmi_obese">#F44336</color>
+
 
 
 </resources>

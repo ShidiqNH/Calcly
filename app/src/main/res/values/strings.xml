@@ -30,6 +30,11 @@
     <string name="currency">Currency</string>
     <string name="bmi">BMI</string>
     <string name="time">Time</string>
+    <string name="male">MALE</string>
+    <string name="height">HEIGHT</string>
+    <string name="weight">WEIGHT</string>
+    <string name="age">AGE</string>
+    <string name="calculate_your_bmi">CALCULATE YOUR BMI</string>
 
     <string-array name="temperature_units_full">
         <item>Celsius</item>
@@ -68,6 +73,41 @@
         <item>Second</item>
         <item>Millisecond</item>
     </string-array>
+
+    <string-array name="currency_units_full">
+        <item>USD - United States Dollar</item>
+        <item>AUD - Australian Dollar</item>
+        <item>BGN - Bulgarian Lev</item>
+        <item>BRL - Brazilian Real</item>
+        <item>CAD - Canadian Dollar</item>
+        <item>CHF - Swiss Franc</item>
+        <item>CNY - Chinese Yuan</item>
+        <item>CZK - Czech Koruna</item>
+        <item>DKK - Danish Krone</item>
+        <item>EUR - Euro</item>
+        <item>GBP - British Pound Sterling</item>
+        <item>HKD - Hong Kong Dollar</item>
+        <item>HUF - Hungarian Forint</item>
+        <item>IDR - Indonesian Rupiah</item>
+        <item>ILS - Israeli New Shekel</item>
+        <item>INR - Indian Rupee</item>
+        <item>ISK - Icelandic Krona</item>
+        <item>JPY - Japanese Yen</item>
+        <item>KRW - South Korean Won</item>
+        <item>MXN - Mexican Peso</item>
+        <item>MYR - Malaysian Ringgit</item>
+        <item>NOK - Norwegian Krone</item>
+        <item>NZD - New Zealand Dollar</item>
+        <item>PHP - Philippine Peso</item>
+        <item>PLN - Polish Zloty</item>
+        <item>RON - Romanian Leu</item>
+        <item>SEK - Swedish Krona</item>
+        <item>SGD - Singapore Dollar</item>
+        <item>THB - Thai Baht</item>
+        <item>TRY - Turkish Lira</item>
+        <item>ZAR - South African Rand</item>
+    </string-array>
+
 
     <string-array name="temperature_units_abbr">
         <item>°C</item>

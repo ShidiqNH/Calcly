@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_gravity="center"
+    android:elevation="4dp"
+    android:gravity="center"
+    android:layout_margin="16dp"
+    tools:ignore="RtlSymmetry">
+
+
+    <TextView
+        android:id="@+id/bmiValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20.3"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/textPrimary"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/bmiDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="kg/m²"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        android:textColor="@color/textPrimary"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/bmiStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your BMI is normal"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_green_light"
+        android:gravity="center" />
+
+    <Button
+        android:id="@+id/okayButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Okay"
+        android:backgroundTint="@color/operation"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center" />
+    </LinearLayout>
