@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calcly" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+
+        <item name="colorPrimary">@color/background</item>
+        <item name="colorOnPrimary">@color/textPrimary</item>
+        <item name="colorSurface">@color/buttonBackground</item>
+        <item name="colorOnSurface">@color/textPrimary</item>
+        <item name="colorPrimaryVariant">@color/operation</item>
+        <item name="colorControlHighlight">@color/textSecondary</item>
+    </style>
+
+    <style name="Theme.Calcly" parent="Base.Theme.Calcly" />
+
+    <style name="calculatorButtonBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:inset">0dp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+
+    </style>
+
+    <style name="calculatorButton" parent="calculatorButtonBase">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="operationButton" parent="calculatorButtonBase">
+        <item name="android:textColor">@color/operation</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="iconMenu">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:fillColor">@color/iconColor</item>
+    </style>
+
+
+</resources>

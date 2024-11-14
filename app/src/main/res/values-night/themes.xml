@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Calcly" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+
+        <item name="colorPrimary">@color/background</item>
+        <item name="colorOnPrimary">@color/textPrimary</item>
+        <item name="colorSurface">@color/buttonBackground</item>
+        <item name="colorOnSurface">@color/textPrimary</item>
+        <item name="colorPrimaryVariant">@color/operation</item>
+        <item name="colorControlHighlight">@color/textSecondary</item>
+    </style>
+
+
+
+</resources>
