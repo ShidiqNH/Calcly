@@ -30,6 +30,9 @@
 
     <style name="calculatorButton" parent="calculatorButtonBase">
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
+
+
+    </style><style name="spacerButton" parent="calculatorButtonBase">
     </style>
 
     <style name="operationButton" parent="calculatorButtonBase">

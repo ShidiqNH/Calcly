@@ -12,6 +12,7 @@
     <string name="eight">8</string>
     <string name="nine">9</string>
     <string name="addition">+</string>
+    <string name="plusMinus">±</string>
     <string name="subtraction">−</string>
     <string name="multiplication">×</string>
     <string name="division">÷</string>
@@ -22,11 +23,29 @@
     <string name="clear">C</string>
     <string name="homeDesc">Home</string>
     <string name="backspaceDesc">Backspace</string>
+    <string name="switchDesc">Switch</string>
     <string name="length">Length</string>
     <string name="Mass">Mass</string>
     <string name="temperature">Temperature</string>
     <string name="currency">Currency</string>
     <string name="bmi">BMI</string>
     <string name="time">Time</string>
+    <string-array name="temperature_units_full">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+        <item>Rankine</item>
+        <item>Réaumur</item>
+    </string-array>
+
+    <string-array name="temperature_units_abbr">
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
+        <item>°R</item>
+        <item>°Re</item>
+    </string-array>
+
+
 
 </resources>
