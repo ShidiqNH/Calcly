@@ -30,12 +30,22 @@
     <string name="currency">Currency</string>
     <string name="bmi">BMI</string>
     <string name="time">Time</string>
+
     <string-array name="temperature_units_full">
         <item>Celsius</item>
         <item>Fahrenheit</item>
         <item>Kelvin</item>
         <item>Rankine</item>
         <item>Réaumur</item>
+    </string-array>
+
+    <string-array name="mass_units_full">
+        <item>Tonne</item>
+        <item>Kilogram</item>
+        <item>Gram</item>
+        <item>Miligram</item>
+        <item>Pound</item>
+        <item>Ounce</item>
     </string-array>
 
     <string-array name="temperature_units_abbr">
@@ -46,6 +56,14 @@
         <item>°Re</item>
     </string-array>
 
+    <string-array name="mass_units_abbr">
+        <item>t</item>
+        <item>Kg</item>
+        <item>g</item>
+        <item>Mg</item>
+        <item>lb</item>
+        <item>oz</item>
+    </string-array>
 
 
 </resources>
