@@ -18,6 +18,7 @@ class CurrencyActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCurrencyBinding
     private val baseUrl = "https://api.frankfurter.app/latest"
     private var rates = mutableMapOf<String, Double>()
+    private var isEditingFirstValue: Boolean = true // Track which value is being edited
 
     private val fullCurrencyList = arrayOf(
         "USD - United States Dollar",
@@ -63,6 +64,7 @@ class CurrencyActivity : AppCompatActivity() {
         setupToolbar()
         setupSpinners()
         setupButtonListeners()
+        setupFocusListeners()
         fetchCurrencyRates()
     }
 
@@ -125,6 +127,63 @@ class CurrencyActivity : AppCompatActivity() {
         binding.backspace.setOnClickListener { backspaceInput() }
     }
 
+    private fun setupFocusListeners() {
+        binding.currencyValue1.setOnClickListener {
+            isEditingFirstValue = true
+            highlightSelectedInput()
+        }
+
+        binding.currencyValue2.setOnClickListener {
+            isEditingFirstValue = false
+            highlightSelectedInput()
+        }
+    }
+
+    private fun highlightSelectedInput() {
+        val selectedColor = resources.getColor(R.color.operation, null)
+        val defaultColor = resources.getColor(R.color.textPrimary, null)
+
+        if (isEditingFirstValue) {
+            binding.currencyValue1.setTextColor(selectedColor)
+            binding.currencyValue2.setTextColor(defaultColor)
+        } else {
+            binding.currencyValue1.setTextColor(defaultColor)
+            binding.currencyValue2.setTextColor(selectedColor)
+        }
+    }
+
+    private fun appendToInput(value: String) {
+        val inputField = if (isEditingFirstValue) binding.currencyValue1 else binding.currencyValue2
+        var currentText = inputField.text.toString()
+
+        if (value == "." && currentText.contains(".")) return
+
+        if (currentText == "0" && value != ".") {
+            currentText = ""
+        }
+
+        currentText += value
+        inputField.text = currentText
+        convertCurrency()
+    }
+
+    private fun allClear() {
+        binding.currencyValue1.text = "0"
+        binding.currencyValue2.text = ""
+    }
+
+    private fun backspaceInput() {
+        val inputField = if (isEditingFirstValue) binding.currencyValue1 else binding.currencyValue2
+        val currentText = inputField.text.toString()
+        if (currentText.isNotEmpty()) {
+            inputField.text = currentText.dropLast(1)
+        }
+        if (inputField.text.isEmpty()) {
+            inputField.text = "0"
+        }
+        convertCurrency()
+    }
+
     private fun fetchCurrencyRates() {
         val queue = Volley.newRequestQueue(this)
         val url = "$baseUrl?base=USD"
@@ -153,11 +212,13 @@ class CurrencyActivity : AppCompatActivity() {
     }
 
     private fun convertCurrency() {
-        val input = binding.currencyValue1.text.toString().toDoubleOrNull() ?: return
-        val fromCurrency = currencyCodes[binding.spinnerCurrency1.selectedItemPosition]
-        val toCurrency = currencyCodes[binding.spinnerCurrency2.selectedItemPosition]
+        val input = (if (isEditingFirstValue) binding.currencyValue1.text else binding.currencyValue2.text)
+            .toString()
+            .toDoubleOrNull() ?: return
+        val fromCurrency = if (isEditingFirstValue) currencyCodes[binding.spinnerCurrency1.selectedItemPosition] else currencyCodes[binding.spinnerCurrency2.selectedItemPosition]
+        val toCurrency = if (isEditingFirstValue) currencyCodes[binding.spinnerCurrency2.selectedItemPosition] else currencyCodes[binding.spinnerCurrency1.selectedItemPosition]
 
-        val convertedValue = if (rates.containsKey(fromCurrency) && rates.containsKey(toCurrency)) {
+        val result = if (rates.containsKey(fromCurrency) && rates.containsKey(toCurrency)) {
             val fromRate = rates[fromCurrency] ?: 1.0
             val toRate = rates[toCurrency] ?: 1.0
             input / fromRate * toRate
@@ -165,29 +226,10 @@ class CurrencyActivity : AppCompatActivity() {
             input
         }
 
-        binding.currencyValue2.text = String.format("%.2f", convertedValue)
-    }
-
-    private fun appendToInput(value: String) {
-        val currentText = binding.currencyValue1.text.toString()
-        if (value == "." && currentText.contains(".")) return
-        binding.currencyValue1.text = currentText + value
-        convertCurrency()
-    }
-
-    private fun allClear() {
-        binding.currencyValue1.text = "0"
-        binding.currencyValue2.text = ""
-    }
-
-    private fun backspaceInput() {
-        val currentText = binding.currencyValue1.text.toString()
-        if (currentText.isNotEmpty()) {
-            binding.currencyValue1.text = currentText.dropLast(1)
+        if (isEditingFirstValue) {
+            binding.currencyValue2.text = String.format("%.2f", result)
+        } else {
+            binding.currencyValue1.text = String.format("%.2f", result)
         }
-        if (binding.currencyValue1.text.isEmpty()) {
-            binding.currencyValue1.text = "0"
-        }
-        convertCurrency()
     }
 }
